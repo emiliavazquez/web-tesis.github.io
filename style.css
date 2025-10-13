@@ -275,4 +275,97 @@ footer {
     flex-direction: column;
     align-items: flex-start;
   }
+  
+/* --- OPTIMIZACIÓN RESPONSIVE PARA CELULARES --- */
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  header img {
+    height: 90px;
+    margin-bottom: 12px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 1.1rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin: 40px auto;
+    padding: 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .hero img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  section {
+    padding: 15px;
+    margin: 40px auto;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    padding: 18px;
+    text-align: center;
+  }
+
+  .alt {
+    padding: 40px 10px;
+  }
+
+  .equipo {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .equipo .miembro {
+    padding: 12px;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    font-size: 1rem;
+  }
+
+  .equipo {
+    grid-template-columns: 1fr;
+  }
+
+  .hero img {
+    max-width: 90%;
+  }
+}
+
+
 }
