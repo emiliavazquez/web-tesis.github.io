@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EZOE & TopiaFec — Videojuego educativo</title>
+<meta name="description" content="EZOE presenta TopiaFec, videojuego educativo de Formación Ética y Ciudadana. Proyecto de tesis 2025 colegio ISEP 5E.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+.justificado{
+  text-align: justify;
+}
+:root{
+  --blue:#163D70;   
+  --blue-light:#1E4C75;
+  --green:#39A36B;  
+  --dark:#0A0A0A;
+  --light:#F5F8FC;
+  --white:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Montserrat',sans-serif;
+  background:var(--light);
+  color:var(--dark);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+
+/* --- HEADER --- */
+header{
+  background:linear-gradient(90deg,var(--blue),var(--blue-light),var(--green));
+  padding:18px 26px;
+  display:flex;
+  align-items: center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  position:sticky;
+  top:0;
+  z-index:10;
+  box-shadow:0 3px 10px rgba(0,0,0,0.15);
+}
+header img{height: 125px;}
+nav{
+  display:flex;
+  gap:18px;
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:  1000;
+  letter-spacing:0.5px;
+  transition:opacity .3s;
+  font-size: x-large;
+}
+nav a:hover{opacity:.7}
+
+/* --- HERO --- */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+  max-width:1200px;
+  margin:60px auto;
+  padding:20px;
+}
+.hero h1{
+  font-family:'Orbitron',sans-serif;
+  font-size:clamp(26px,3vw,38px);
+  color:var(--blue);
+  margin-bottom:16px;
+}
+.hero p{font-size:1rem}
+.hero img{
+  width:100%;
+  max-width:420px;
+  border-radius:16px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* --- SECCIONES --- */
+section{
+  max-width:1200px;
+  margin:60px auto;
+  padding:20px;
+}
+section h2{
+  font-family:'Orbitron',sans-serif;
+  font-size:clamp(20px,2vw,28px);
+  color:var(--blue);
+  text-align:center;
+  margin-bottom:18px;
+}
+.card{
+  background:var(--white);
+  padding:22px;
+  border-radius:12px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.05);
+  transition:transform .3s, box-shadow .3s;
+}
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.alt{
+  background:linear-gradient(135deg,var(--blue),var(--blue-light));
+  color:#fff;
+  padding:60px 0;
+}
+.alt h2{color:#fff}
+
+/* --- CARRUSEL --- */
+.carrusel{
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+  max-width:900px;
+  margin:20px auto;
+  box-shadow:0 6px 20px rgba(0,0,0,0.2);
+}
+.carrusel-inner{
+  display:flex;
+  width:100%;
+  transition:transform .5s ease;
+}
+.carrusel-item{
+  min-width:100%;
+}
+.carrusel-item img{
+  width:100%;
+  display:block;
+}
+.carrusel-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.4);
+  color:#fff;
+  border:none;
+  font-size:30px;
+  padding:8px 12px;
+  cursor:pointer;
+  border-radius:6px;
+  transition:background .3s;
+}
+.carrusel-btn:hover{background:rgba(0,0,0,0.6)}
+.carrusel-btn.prev{left:10px}
+.carrusel-btn.next{right:10px}
+
+/* --- EQUIPO --- */
+.equipo{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+.equipo .miembro{
+  background:var(--white);
+  padding:18px;
+  border-radius:10px;
+  text-align:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+  transition:transform .3s;
+}
+.equipo .miembro:hover{transform:scale(1.05)}
+.equipo h3{color:var(--blue-light);margin-bottom:8px}
+
+/* --- FOOTER --- */
+footer{
+  background:var(--blue);
+  color:#fff;
+  text-align:center;
+  padding:16px;
+  font-size:14px;
+  margin-top:60px;
+}
+
+/* --- ANIMACIONES --- */
+.fade-up{
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeUp 1s forwards;
+}
+@keyframes fadeUp{
+  to{opacity:1;transform:translateY(0);}
+}
+
+@media(max-width:850px){
+  .hero{grid-template-columns:1fr}
+  header{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="C:\Users\vazquezclementi.mari\Desktop\web tesis 2\EZOE.png" alt="Logo EZOE">
+  <nav>
+    <a href="#empresa">EZOE</a>
+    <a href="#juego">TopiaFec</a>
+    <a href="#galeria">Galería</a>
+    <a href="#equipo">Equipo</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text fade-up">
+    <h1>EZOE & TopiaFec</h1>
+    <p class="justificado">Somos <strong>EZOE</strong>, un grupo de estudiantes de informática que desarrolló <strong>TopiaFec</strong>, un videojuego educativo enfocado en la formación ética y ciudadana. Nuestro objetivo es unir aprendizaje y tecnología, ofreciendo experiencias interactivas que fortalezcan el pensamiento crítico.</p>
+  </div>
+  <div class="hero-img fade-up">
+    <img src="C:\Users\vazquezclementi.mari\Desktop\web tesis 2\TOPIAFEC.png" alt="Logo del videojuego TopiaFec">
+  </div>
+</section>
+
+<section id="empresa">
+  <h2>Sobre EZOE</h2>
+  <div class="grid-3 fade-up">
+    <div class="card">
+      <h3>Nuestra Historia</h3>
+      <p>EZOE surge como un proyecto de estudiantes del bachillerato de informática que buscan combinar el conocimiento técnico con la responsabilidad social. Nace del deseo de innovar en el ámbito educativo, utilizando la programación y el diseño como herramientas para generar impacto.</p>
+    </div>
+    <div class="card">
+      <h3>Misión</h3>
+      <p>Fomentar la innovación educativa mediante el desarrollo de videojuegos que integren la enseñanza con experiencias interactivas, favoreciendo el juicio crítico, la empatía y la toma de decisiones responsables.</p>
+    </div>
+    <div class="card">
+      <h3>Visión</h3>
+      <p>Consolidar a EZOE como una empresa joven, creativa y comprometida con la educación, demostrando que los videojuegos pueden ser una vía para el aprendizaje y la reflexión en el entorno escolar.</p>
+    </div>
+  </div>
+</section>
+
+<section id="juego" class="alt">
+  <h2>TopiaFec — Videojuego Educativo</h2>
+  <div style="max-width:900px;margin:0 auto;padding:0 20px;text-align:justify;">
+    <p>
+      <strong>TopiaFec</strong> es un videojuego educativo orientado a la <strong>Formación Ética y Ciudadana (FEC)</strong>.  
+      Su objetivo es desarrollar el juicio crítico del jugador mediante distintas situaciones presentadas a lo largo de su vida virtual.
+    </p><br>
+    <p>
+      La historia se desarrolla en el contexto escolar y continúa hasta la vida profesional del personaje. El juego inicia desde su nacimiento, acompañando su crecimiento y evolución a través de diferentes etapas, donde las decisiones moldean su camino.
+    </p><br>
+    <p>
+      En TopiaFec, el jugador es el protagonista. A través de una jugabilidad tipo <em>point and click</em>, debe interactuar con objetos y personajes para tomar decisiones que determinarán el desarrollo de su historia.
+    </p><br>
+    <p>
+      Cada nivel propone dilemas éticos y morales. El jugador deberá analizar las consecuencias y elegir con responsabilidad, comprendiendo la importancia de los valores y las normas en la convivencia social.
+    </p><br>
+    <p>
+      Gracias a su enfoque narrativo en primera persona, el jugador se siente inmerso en la historia, desarrollando empatía y reflexión sobre sus decisiones. La curiosidad por descubrir cómo cada acción afecta su vida impulsa a continuar hasta alcanzar la plenitud del personaje.
+    </p>
+  </div>
+
+
+  <!-- Carrusel de imágenes -->
+  <section id="galeria" style="margin-top:40px;">
+    <h2>Galería de Imágenes</h2>
+    <div class="carrusel">
+      <div class="carrusel-inner">
+        <div class="carrusel-item"><img src="img/juego1.jpg" alt="Escena del juego 1"></div>
+        <div class="carrusel-item"><img src="img/juego2.jpg" alt="Escena del juego 2"></div>
+        <div class="carrusel-item"><img src="img/juego3.jpg" alt="Escena del juego 3"></div>
+        <div class="carrusel-item"><img src="img/juego4.jpg" alt="Escena del juego 4"></div>
+        <div class="carrusel-item"><img src="img/juego5.jpg" alt="Escena del juego 5"></div>
+        <div class="carrusel-item"><img src="img/juego6.jpg" alt="Escena del juego 6"></div>
+        <div class="carrusel-item"><img src="img/juego7.jpg" alt="Escena del juego 7"></div>
+      </div>
+      <button class="carrusel-btn prev">&#10094;</button>
+      <button class="carrusel-btn next">&#10095;</button>
+    </div>
+  </section>
+</section>
+
+<section id="equipo">
+  <h2>Equipo de Desarrollo</h2>
+  <div class="equipo fade-up">
+    <div class="miembro">
+      <h3>Ema Ciotti</h3>
+      <p>Creadora de contenido</p>
+    </div>
+    <div class="miembro">
+      <h3>Alvaro Zakalik</h3>
+      <p>Analista</p>
+    </div>
+    <div class="miembro">
+      <h3>Olivia Funes</h3>
+      <p>Programadora</p>
+    </div>
+    <div class="miembro">
+      <h3>Emilia</h3>
+      <p>DIseñadora</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 EZOE | TopiaFec Videojuego Educativo
+</footer>
+
+<script>
+// Carrusel funcional
+(function(){
+  const carrusel = document.querySelector('.carrusel-inner');
+  const items = document.querySelectorAll('.carrusel-item');
+  let index = 0;
+  function showSlide(i){
+    index = (i + items.length) % items.length;
+    carrusel.style.transform = `translateX(-${index * 100}%)`;
+  }
+  document.querySelector('.carrusel-btn.next').addEventListener('click',()=>showSlide(index+1));
+  document.querySelector('.carrusel-btn.prev').addEventListener('click',()=>showSlide(index-1));
+  setInterval(()=>showSlide(index+1),5000);
+})();
+</script>
+
+</body>
+</html>
